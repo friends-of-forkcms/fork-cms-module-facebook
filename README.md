@@ -7,7 +7,7 @@ This repository contains two modules:
 FacebookConnector module
 ------
 
-You need this module to establish an OAUTH connection with Facebook.
+> You need this module to establish an OAUTH connection with Facebook.
 
 **Installation:**
 
