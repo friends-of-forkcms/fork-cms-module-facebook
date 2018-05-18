@@ -1,4 +1,3 @@
-
 # Facebook module for Fork CMS
 
 > The Facebook module lets you connect to Facebook and add ratings to your website.
