@@ -1,54 +1,39 @@
-# Fork CMS Facebook module
 
-This repository contains two modules:
-1. FacebookConnector module
-2. FacebookRatings module
+# Facebook module for Fork CMS
 
-FacebookConnector module
-------
+> The Facebook module lets you connect to Facebook and add ratings to your website.
 
-> You need this module to establish an OAUTH connection with Facebook.
+**Download:**
+* [Module for Fork CMS 4.3.0](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/1.0.0.zip)
 
-**Installation:**
+**Features:**
+* FacebookConnector module: Authenticating with Facebook
+* FacebookRatings module: Ratings from your Facebook page
 
-### 1. Create a FB-app
+**Installation**
 
-Fill in the `Valid OAuth Redirect URIs`:
-
-Example:
-```
-https://www.xxx.be/private/nl/facebook_connector/callback_from_facebook
-```
-
-Note:
-* **Facebook App**
+* Create a Facebook APP:
+	* Fill in the `Valid OAuth Redirect URIs`, example: `https://www.xxx.be/private/nl/facebook_connector/callback_from_facebook`
 	* You do not need to fill in an app domain
 	* You do not need to add a "platform"
-
-
-### 2. Install the "Facebook connector" module in Fork CMS
-
 * In your terminal, type: `composer require facebook/graph-sdk` to install the external library.
-* Copy/paste the module to your site.
-* Install the module in Fork CMS.
+* Download this module
+* "Upload module" in your Fork CMS
+* Install the module
 * Visit the module settings to make the facebook connection.
 
 Note:
 * **Buggy Facebook graph sdk version**: Do not use "facebook/graph-sdk" version "5.5" because it contains a bug which prevents you from successful executing "Facebook login".
 
+## Contributing
 
-FacebookRatings module
-------
+It would be great if you could help us improve the module. GitHub does a great job in managing collaboration by providing different tools, the only thing you need is a [GitHub](https://github.com/) login.
 
-> This module can show your Facebook-page ratings.
+* Use **Pull requests** to add or update code
+* **Issues** for bug reporting or code discussions
 
-Possible blocks:
-- Ratings
+More info on how to work with GitHub on [help.github.com](https://help.github.com).
 
-Possible widgets:
-- RatingsSliders
+## License
 
-**Installation**
-
-* Copy/paste this FacebookRatings module to your Fork CMS.
-* Install the module in Fork CMS.
+The module is licensed under MIT. In short, this license allows you to do everything as long as the copyright statement stays present.
