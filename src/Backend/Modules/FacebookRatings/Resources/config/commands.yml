@@ -1,0 +1,7 @@
+services:
+  facebook_ratings.handler.save_settings:
+    class: Backend\Modules\FacebookRatings\Command\SaveSettingsHandler
+    arguments:
+      - "@fork.settings"
+    tags:
+      - { name: command_handler, handles: Backend\Modules\FacebookRatings\Command\SaveSettings }

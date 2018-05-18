@@ -1,0 +1,7 @@
+services:
+    facebook.valid_facebook_page_id_validator:
+        class: Backend\Modules\FacebookConnector\Validator\Constraints\ValidFacebookPageIdValidator
+        arguments:
+            - "@facebook.helper"
+        tags:
+            - { name: validator.constraint_validator }

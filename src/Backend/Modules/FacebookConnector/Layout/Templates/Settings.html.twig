@@ -1,0 +1,126 @@
+{% extends '/Layout/Templates/base.html.twig' %}
+
+{% block content %}
+  {% if pageIdChooser %}{{ form_start(form) }}{% endif %}
+
+  <div class="row fork-module-content">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+
+        {% if not requiresApplicationIdAndSecret and not active %}
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{ 'lbl.Step'|trans|ucfirst }} 1/5
+            </h3>
+            <div class="row fork-module-messages">
+              <div class="col-md-12">
+                <div class="alert alert-warning" role="alert">
+                  {{ 'msg.ApplicationIdAndSecretCanBeFoundHere'|trans|format(geturl('Index', 'Settings'))|raw }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{ 'lbl.Step'|trans|ucfirst }} {{ step }}/5
+          </h3>
+        </div>
+
+        <div class="panel-body">
+          {% if requiresApplicationIdAndSecret %}
+            <div class="row fork-module-messages">
+              <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                  {{ 'msg.RequiresFacebookApplicationIdAndSecret'|trans|format(geturl('Index', 'Settings'))|raw }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if loginUrl %}
+            <a href="{{ loginUrl }}" class="btn btn-primary">{{ 'msg.LogInWithFacebook'|trans|ucfirst }}</a>
+            <div class="alert alert-warning" role="alert">
+              {{ 'msg.LogInWithFacebookHelp'|trans|raw }}
+            </div>
+          {% endif %}
+
+          {% if pageIdChooser %}
+            <div class="panel panel-default panel-default">
+              <div class="panel-heading">
+                <p>{{ 'lbl.FacebookPageId'|trans|ucfirst }}</p>
+              </div>
+              <div class="panel-body">
+                <div class="form-group last">
+                  {{ form_widget(form.pageId) }}
+                  {{ form_errors(form.pageId) }}
+                </div>
+              </div>
+              <div class="panel-footer">
+                <p>{{ 'msg.FacebookPageIdHelp'|trans|ucfirst|raw }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if active %}
+            <div class="row fork-module-messages">
+              <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                  {{ 'msg.FacebookConnectionSuccessfull'|trans }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row fork-module-actions">
+    <div class="col-md-12">
+      <div class="btn-toolbar">
+        <div class="btn-group pull-left" role="group">
+          {% if showFacebookConnectorReset and not requiresApplicationIdAndSecret and not loginUrl %}
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmReset">
+            <span class="fa fa-trash-o"></span>
+            {{ 'lbl.Reset'|trans|ucfirst }}
+          </button>
+          {% endif %}
+        </div>
+        <div class="btn-group pull-right" role="group">
+          {% if pageIdChooser %}
+            <button id="addButton" type="submit" name="add" class="btn btn-primary">
+              <span class="fa fa-floppy-o"></span>&nbsp;
+              {{ 'lbl.Save'|trans|ucfirst }}
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if showFacebookConnectorReset and not requiresApplicationIdAndSecret and not loginUrl %}
+      <div class="modal fade" id="confirmReset" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="modal-title h4">{{ 'lbl.Reset'|trans|ucfirst }}</span>
+            </div>
+            <div class="modal-body">
+              <p>{{ 'msg.ConfirmReset'|trans|format(title)|raw }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <span class="fa fa-times"></span>{{ 'lbl.Cancel'|trans|ucfirst }}
+              </button>
+              <a href="{{ geturl('Reset') }}" class="btn btn-danger">
+                <span class="fa fa-trash"></span>{{ 'lbl.Reset'|trans|ucfirst }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% if pageIdChooser %}{{ form_end(form) }}{% endif %}
+{% endblock %}

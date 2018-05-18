@@ -1,0 +1,49 @@
+<?php
+
+namespace Backend\Modules\FacebookRatings\Actions;
+
+use Backend\Core\Engine\Base\ActionEdit;
+use Backend\Core\Engine\Model;
+use Backend\Modules\FacebookRatings\Command\SaveSettings;
+use Backend\Modules\FacebookRatings\Form\SaveSettingsType;
+
+class Settings extends ActionEdit
+{
+    public function execute()
+    {
+        parent::execute();
+
+        $form = $this->createForm(
+            SaveSettingsType::class,
+            new SaveSettings($this->get('fork.settings'))
+        );
+
+        $form->handleRequest($this->get('request'));
+
+        if (!$form->isValid()) {
+            $this->tpl->assign('form', $form->createView());
+
+            $this->parse();
+            $this->display();
+
+            return;
+        }
+
+        /** @var SaveSettings $settings */
+        $settings = $form->getData();
+
+        // The command bus will handle the saving of the settings in the database.
+        $this->get('command_bus')->handle($settings);
+
+        return $this->redirect(
+            Model::createURLForAction(
+                'Settings',
+                null,
+                null,
+                [
+                    'report' => 'saved',
+                ]
+            )
+        );
+    }
+}

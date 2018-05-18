@@ -1,0 +1,10 @@
+imports:
+  - { resource: commands.yml }
+  - { resource: forms.yml }
+  - { resource: validators.yml }
+
+services:
+  facebook.helper:
+    class: Backend\Modules\FacebookConnector\Helper\FacebookHelper
+    arguments:
+      - "@fork.settings"

@@ -1,0 +1,59 @@
+<div class="module-facebook-ratings block-facebook-ratings-ratings">
+  <header class="widget-heading" role="banner">
+    <h3>{{ 'msg.RatingsFromOurClients'|trans|ucfirst }}</h3>
+  </header>
+
+  {% if ratings %}
+    <div class="widget-body masonry-grid">
+      <div class="grid-sizer"></div>
+      {% for rating in ratings %}
+        {% if rating.rating >= minimumRating %}
+          <div class="rating grid-item" role="main">
+
+            <header class="block-rating-heading page-header" role="banner">
+              <div class="block-rating-heading-info">
+                <div class="block-rating-heading-info-holder">
+                  <div class="rating-reviewer-name" itemprop="name">{{ rating.reviewer.name }}</div>
+                  <div class="rating-stars" itemprop="starRating" itemscope itemtype="http://schema.org/Rating">
+                    <meta itemprop="ratingValue" content="{{ rating.rating }}">
+                    <i class="fa fa-star{% if rating.rating < 1 %}-o{% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if rating.rating < 2 %}-o{% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if rating.rating < 3 %}-o{% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if rating.rating < 4 %}-o{% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if rating.rating < 5 %}-o{% endif %}" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-rating-heading-image imageLoad imageContainer" data-small="https://graph.facebook.com/{{ rating.reviewer.id }}/picture?width=640" data-medium="https://graph.facebook.com/{{ rating.reviewer.id }}/picture?width=640" data-large="https://graph.facebook.com/{{ rating.reviewer.id }}/picture?width=640" data-small-width="640" data-medium-width="640" data-large-width="640" data-alt="{{ item.mediaItem.title }}">
+                <noscript>
+                  <img src="https://graph.facebook.com/{{ rating.reviewer.id }}/picture?width=640" alt="{{ rating.reviewer.name }}" />
+                </noscript>
+              </div>
+            </header>
+
+            {% if rating.review_text %}
+            <div class="block-rating-body">
+              <span class="reviewer-text">{{ rating.review_text }}</span>
+            </div>
+            {% endif %}
+
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="widget-body">
+      <p>{{ 'msg.NoFacebookRatingsFound'|trans }}</p>
+    </div>
+  {% endif %}
+
+  <div class="widget-footer">
+    <a class="btn" href="https://www.facebook.com/{{ facebookPageId }}/reviews/">
+      {{ 'lbl.ViewAll'|trans|ucfirst }}
+    </a>
+    <a class="btn" href="https://www.facebook.com/{{ facebookPageId }}/reviews/">
+      {{ 'lbl.WriteARating'|trans|ucfirst }}
+    </a>
+  </div>
+</div>

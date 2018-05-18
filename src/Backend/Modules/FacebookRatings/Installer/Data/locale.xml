@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Locale>
+  <Backend>
+    <Core>
+      <item type="label" name="FacebookRatings">
+        <translation language="en"><![CDATA[Facebook ratings]]></translation>
+        <translation language="nl"><![CDATA[Facebook reviews]]></translation>
+      </item>
+      <item type="label" name="Ratings">
+        <translation language="en"><![CDATA[ratings]]></translation>
+        <translation language="nl"><![CDATA[reviews]]></translation>
+      </item>
+      <item type="label" name="RatingsSlider">
+        <translation language="en"><![CDATA[ratings slider]]></translation>
+        <translation language="nl"><![CDATA[ratings slider]]></translation>
+      </item>
+    </Core>
+    <FacebookRatings>
+      <item type="label" name="MinimumRating">
+        <translation language="en"><![CDATA[Minimum rating of the shown ratings.]]></translation>
+        <translation language="nl"><![CDATA[Minimum rating van de getoonde ratings.]]></translation>
+      </item>
+    </FacebookRatings>
+  </Backend>
+  <Frontend>
+    <Core>
+      <item type="message" name="NoFacebookRatingsFound">
+        <translation language="en"><![CDATA[No Facebook ratings found.]]></translation>
+        <translation language="nl"><![CDATA[Geen facebook ratings gevonden.]]></translation>
+      </item>
+      <item type="label" name="Ratings">
+        <translation language="en"><![CDATA[ratings]]></translation>
+        <translation language="nl"><![CDATA[reviews]]></translation>
+      </item>
+      <item type="message" name="RatingsFromOurClients">
+        <translation language="en"><![CDATA[Reviews from our clients...]]></translation>
+        <translation language="nl"><![CDATA[Onze klanten vertellen...]]></translation>
+      </item>
+      <item type="label" name="ReadMore">
+        <translation language="en"><![CDATA[read more]]></translation>
+        <translation language="nl"><![CDATA[lees meer]]></translation>
+      </item>
+      <item type="label" name="ViewAll">
+        <translation language="en"><![CDATA[view all]]></translation>
+        <translation language="nl"><![CDATA[bekijk alle]]></translation>
+      </item>
+      <item type="label" name="WriteARating">
+        <translation language="en"><![CDATA[write a review]]></translation>
+        <translation language="nl"><![CDATA[schrijf een recensie]]></translation>
+      </item>
+    </Core>
+  </Frontend>
+</Locale>

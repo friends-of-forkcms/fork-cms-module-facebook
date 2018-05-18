@@ -1,0 +1,7 @@
+services:
+    facebook.form.type.page_id:
+        class: Backend\Modules\FacebookConnector\Form\PageIdType
+        arguments:
+            - "@facebook.helper"
+        tags:
+            - { name: form.type }

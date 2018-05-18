@@ -1,0 +1,7 @@
+services:
+  facebook.handler.save_settings:
+    class: Backend\Modules\FacebookConnector\Command\SavePageIdHandler
+    arguments:
+      - "@fork.settings"
+    tags:
+      - { name: command_handler, handles: Backend\Modules\FacebookConnector\Command\SavePageId }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Locale>
+  <Backend>
+    <Core>
+      <item type="label" name="FacebookConnector">
+        <translation language="en"><![CDATA[Facebook connector]]></translation>
+        <translation language="nl"><![CDATA[Facebook connectie]]></translation>
+      </item>
+    </Core>
+    <FacebookConnector>
+      <item type="message" name="ApplicationIdAndSecretCanBeFoundHere">
+        <translation language="en"><![CDATA[<a href="%1$s">You can edit your Facebook application ID and secret over here</a>.]]></translation>
+        <translation language="nl"><![CDATA[Facebook toepassings-id en geheim <a href="%1$s">kunnen hier gewijzigd worden</a>.]]></translation>
+      </item>
+      <item type="message" name="ConfirmReset">
+        <translation language="en"><![CDATA[Are you sure you want to reset the corrent connection with Facebook, so you have to define everything again?]]></translation>
+        <translation language="nl"><![CDATA[Ben je zeker dat je de huidige verbinding wil resetten en alles opnieuw wil instellen?]]></translation>
+      </item>
+      <item type="message" name="FacebookConnectionSuccessfull">
+        <translation language="en"><![CDATA[Facebook connection is successful.]]></translation>
+        <translation language="nl"><![CDATA[Facebook connectie succesvol.]]></translation>
+      </item>
+      <item type="label" name="FacebookPageId">
+        <translation language="en"><![CDATA[Facebook page-ID]]></translation>
+        <translation language="nl"><![CDATA[Facebook pagina-ID]]></translation>
+      </item>
+      <item type="message" name="FacebookPageIdHelp">
+        <translation language="en"><![CDATA[Surf to your facebook page, click on "info" and at the bottom you will find your Page-id. Copy/paste this ID in the field above.]]></translation>
+        <translation language="nl"><![CDATA[Bezoek je Facebook pagina, klik daar op "info" en dan zie je onderaan je Pagina-ID staan. Kopieer/plak deze ID in bovenstaand veld.]]></translation>
+      </item>
+      <item type="message" name="LogInWithFacebook">
+        <translation language="en"><![CDATA[Log in with Facebook]]></translation>
+        <translation language="nl"><![CDATA[Inloggen met Facebook]]></translation>
+      </item>
+      <item type="message" name="LogInWithFacebookHelp">
+        <translation language="en"><![CDATA[NOTE: Local this module can't connect to Facebook.<br/>You can overwrite the repository locally in config_dev.yml to test the layout: `facebook.repository.rating:<br/>
+        class: Backend\Modules\FacebookRatings\Repository\InMemoryRatingRepository`.<br/><br/>To be able to log in to FB, this website URL should be filled in in the FB Application settings.]]></translation>
+        <translation language="nl"><![CDATA[NOTE: Lokaal kan deze FacebookConnector geen connectie maken met Facebook.<br/>Je kan in config_dev.yml de repository overschrijven om lokaal de layout te testen: `facebook.repository.rating:
+        <br/>class: Backend\Modules\FacebookRatings\Repository\InMemoryRatingRepository`.<br/><br/>Om te kunnen inloggen op FB moet de URL ingevult zijn in de FB Applicatie instellingen.]]></translation>
+      </item>
+      <item type="label" name="Reset">
+        <translation language="en"><![CDATA[reset]]></translation>
+        <translation language="nl"><![CDATA[reset]]></translation>
+      </item>
+      <item type="message" name="RequiresFacebookApplicationIdAndSecret">
+        <translation language="en"><![CDATA[You first need to <a href="https://developers.facebook.com/apps/">create a Facebook application</a>. Then copy/paste the Facebook Application ID and Application Secret <a href="%1$s">on this page</a>. Then come back to here.]]></translation>
+        <translation language="nl"><![CDATA[U moet eerst <a href="https://developers.facebook.com/apps/">een Facebook applicatie aanmaken</a>. Vervolgens copy/paste u het Facebook toepassings-id en geheim <a href="%1$s">op deze pagina</a>. Kom dan terug naar hier.]]></translation>
+      </item>
+      <item type="label" name="Step">
+        <translation language="en"><![CDATA[step]]></translation>
+        <translation language="nl"><![CDATA[stap]]></translation>
+      </item>
+    </FacebookConnector>
+  </Backend>
+</Locale>

@@ -1,0 +1,9 @@
+imports:
+  - { resource: commands.yml }
+  - { resource: repositories.yml }
+
+services:
+    facebook.helper.rating:
+        class: Backend\Modules\FacebookRatings\Helper\FacebookRatingsHelper
+        arguments:
+            - '@facebook.helper'

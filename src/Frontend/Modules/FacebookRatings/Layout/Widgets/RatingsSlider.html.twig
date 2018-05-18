@@ -1,0 +1,35 @@
+{% if hasRatings %}
+  <div class="module-facebook-ratings widget-facebook-ratings-ratings-slider">
+    <header class="widget-heading" role="banner">
+      <h3>{{ 'msg.RatingsFromOurClients'|trans|ucfirst }}</h3>
+    </header>
+
+    <div class="widget-body">
+      <div class="widget-ratings-slider-body">
+        <div class="widget-ratings-slider-body-container">
+          <div class="widget-ratings-slider-body-info">
+            <div class="widget-ratings-slider-body-title"></div>
+            <div class="widget-ratings-slider-body-text"></div>
+            <div class="widget-ratings-slider-body-rating"></div>
+          </div>
+
+          <div class="widget-ratings-slider-body-triggers">
+            <a class="btn" href="{{ geturlforblock('FacebookRatings', 'Ratings') }}">
+              {{ 'lbl.ReadMore'|trans|ucfirst }}
+            </a>
+            <a class="btn" href="https://www.facebook.com/{{ facebookPageId }}/reviews/">
+              {{ 'lbl.WriteARating'|trans|ucfirst }}
+            </a>
+          </div>
+        </div>
+
+        <div class="widget-ratings-slider-body-controls">
+          <a class="btn btn-prev" data-role="prev" href="#">Previous</a>
+          <a class="btn btn-next" data-role="next" href="#">Next</a>
+        </div>
+      </div>
+
+      <div class="widget-ratings-slider-background"><img src="{{ THEME_URL }}/Core/Layout/images/ratings-background.jpg" /></div>
+    </div>
+  </div>
+{% endif %}
