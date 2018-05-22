@@ -16,8 +16,7 @@ class RatingsSlider extends Widget
             $this->addJSData('ratings', $this->getRatingsForJSData($this->getRatings()));
             $this->tpl->assign('hasRatings', true);
         } catch (\Exception $e) {
-            // Notify bugsnag of this error
-            $this->get('bugsnag')->notifyException($e);
+            // @note: Notify your bug tracker of this error
 
             $this->tpl->assign('hasRatings', false);
         }
