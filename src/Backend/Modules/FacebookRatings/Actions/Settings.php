@@ -9,7 +9,7 @@ use Backend\Modules\FacebookRatings\Form\SaveSettingsType;
 
 class Settings extends ActionEdit
 {
-    public function execute()
+    public function execute(): void
     {
         parent::execute();
 
@@ -21,7 +21,7 @@ class Settings extends ActionEdit
         $form->handleRequest($this->get('request'));
 
         if (!$form->isValid()) {
-            $this->tpl->assign('form', $form->createView());
+            $this->template->assign('form', $form->createView());
 
             $this->parse();
             $this->display();
@@ -35,7 +35,7 @@ class Settings extends ActionEdit
         // The command bus will handle the saving of the settings in the database.
         $this->get('command_bus')->handle($settings);
 
-        return $this->redirect(
+        $this->redirect(
             Model::createURLForAction(
                 'Settings',
                 null,

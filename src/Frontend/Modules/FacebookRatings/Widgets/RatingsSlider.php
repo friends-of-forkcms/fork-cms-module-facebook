@@ -9,16 +9,16 @@ class RatingsSlider extends Widget
     public function execute(): void
     {
         parent::execute();
-        $this->tpl->assign('facebookPageId', $this->get('facebook.helper')->getPageId());
-        $this->tpl->assign('minimumRating', $this->get('fork.settings')->get('FacebookRatings', 'minimum_rating', 4));
+        $this->template->assign('facebookPageId', $this->get('facebook.helper')->getPageId());
+        $this->template->assign('minimumRating', $this->get('fork.settings')->get('FacebookRatings', 'minimum_rating', 4));
 
         try {
             $this->addJSData('ratings', $this->getRatingsForJSData($this->getRatings()));
-            $this->tpl->assign('hasRatings', true);
+            $this->template->assign('hasRatings', true);
         } catch (\Exception $e) {
             // @note: Notify your bug tracker of this error
 
-            $this->tpl->assign('hasRatings', false);
+            $this->template->assign('hasRatings', false);
         }
 
         $this->loadTemplate();

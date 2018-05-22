@@ -27,7 +27,7 @@ class Settings extends ActionEdit
      *
      * @return void
      */
-    public function execute()
+    public function execute(): void
     {
         parent::execute();
 
@@ -51,13 +51,13 @@ class Settings extends ActionEdit
         }
     }
 
-    private function loadPageIdForm()
+    private function loadPageIdForm(): void
     {
         $form = $this->createForm(PageIdType::class, new SavePageId());
         $form->handleRequest($this->get('request'));
 
         if (!$form->isValid()) {
-            $this->tpl->assign('form', $form->createView());
+            $this->template->assign('form', $form->createView());
             $this->view(3, 'pageIdChooser');
 
             return;
@@ -65,16 +65,16 @@ class Settings extends ActionEdit
 
         $this->get('command_bus')->handle($form->getData());
 
-        return $this->redirect(Model::createURLForAction('Settings'));
+        $this->redirect(Model::createURLForAction('Settings'));
     }
 
     public function view(int $step, string $stepName = null, $stepValue = true): void
     {
         if ($stepName) {
-            $this->tpl->assign($stepName, $stepValue);
+            $this->template->assign($stepName, $stepValue);
         }
 
-        $this->tpl->assign('step', $step);
+        $this->template->assign('step', $step);
         parent::parse();
         $this->display();
     }

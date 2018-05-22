@@ -11,15 +11,15 @@ class Ratings extends Block
         parent::execute();
 
         try {
-            $this->tpl->assign('ratings', $this->get('facebook.repository.rating')->findAll());
+            $this->template->assign('ratings', $this->get('facebook.repository.rating')->findAll());
         } catch (\Exception $e) {
             // @todo: Notify your "error log service" of this error
 
-            $this->tpl->assign('ratings', false);
+            $this->template->assign('ratings', false);
         }
 
-        $this->tpl->assign('facebookPageId', $this->get('facebook.helper')->getPageId());
-        $this->tpl->assign('minimumRating', $this->get('fork.settings')->get('FacebookRatings', 'minimum_rating', 4));
+        $this->template->assign('facebookPageId', $this->get('facebook.helper')->getPageId());
+        $this->template->assign('minimumRating', $this->get('fork.settings')->get('FacebookRatings', 'minimum_rating', 4));
         $this->loadTemplate();
     }
 }
