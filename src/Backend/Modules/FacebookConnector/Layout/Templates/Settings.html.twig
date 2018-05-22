@@ -99,6 +99,7 @@
         </div>
       </div>
     </div>
+
     {% if showFacebookConnectorReset and not requiresApplicationIdAndSecret and not loginUrl %}
       <div class="modal fade" id="confirmReset" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -121,6 +122,8 @@
         </div>
       </div>
     {% endif %}
+
   </div>
+
   {% if pageIdChooser %}{{ form_end(form) }}{% endif %}
 {% endblock %}

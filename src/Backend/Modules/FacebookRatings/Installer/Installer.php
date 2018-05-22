@@ -18,13 +18,8 @@ class Installer extends ModuleInstaller
      */
     public function install()
     {
-        // add 'FacebookRatings' as a module
         $this->addModule('FacebookRatings');
-
-        // import locale
         $this->importLocale(dirname(__FILE__) . '/Data/locale.xml');
-
-        // Insert the rest
         $this->insertBackendNavigationForSettings();
         $this->insertFrontendExtras();
         $this->insertRights();

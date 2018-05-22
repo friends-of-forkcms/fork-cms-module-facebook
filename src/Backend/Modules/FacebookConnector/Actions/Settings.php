@@ -18,6 +18,7 @@ class Settings extends ActionEdit
     public function __construct(KernelInterface $kernel)
     {
         parent::__construct($kernel);
+
         $this->helper = $this->get('facebook.helper');
     }
 

@@ -18,13 +18,8 @@ class Installer extends ModuleInstaller
      */
     public function install()
     {
-        // add 'FacebookConnector' as a module
         $this->addModule('FacebookConnector');
-
-        // import locale
         $this->importLocale(dirname(__FILE__) . '/Data/locale.xml');
-
-        // Insert the rest
         $this->insertBackendNavigationForSettings();
         $this->insertRights();
         $this->insertSettings();

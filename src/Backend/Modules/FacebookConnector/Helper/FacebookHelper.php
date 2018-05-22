@@ -108,8 +108,8 @@ class FacebookHelper
     {
         $fb = $this->getFacebook();
         $helper = $fb->getRedirectLoginHelper();
-
         $permissions = ['email']; // Optional permissions
+
         return $helper->getLoginUrl(rtrim(SITE_URL, '/') . '/private/' . Language::getWorkingLanguage() . '/facebook_connector/callback_from_facebook', $permissions);
     }
 
@@ -152,8 +152,7 @@ class FacebookHelper
 
     public function getStep(): string
     {
-        $step = new FacebookStep($this->settings);
-        return $step->getStep();
+        return (new FacebookStep($this->settings))->getStep();
     }
 
     public function isValidPageId(string $pageId): bool
