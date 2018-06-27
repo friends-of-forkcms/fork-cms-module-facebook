@@ -2,12 +2,16 @@
 
 > The Facebook module lets you connect to Facebook and add ratings to your website.
 
-**Download:**
-* [Module for Fork CMS 5.*](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/master.zip)
-* [Module for Fork CMS 4.3.0](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/1.0.0.zip)
+**Download latest FacebookConnector + FacebookRatings + FacebookEvents:**
+* [Modules for Fork CMS 5.*](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/master.zip)
+
+**Download older FacebookConnector + FacebookRatings:**
+* [Modules for Fork CMS 5.*](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/2.0.0.zip)
+* [Modules for Fork CMS 4.3.0](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/1.0.0.zip)
 
 **Features:**
 * FacebookConnector module: Authenticating with Facebook
+* FacebookEvents module: Events from your Facebook page
 * FacebookRatings module: Ratings from your Facebook page
 
 **Installation**
