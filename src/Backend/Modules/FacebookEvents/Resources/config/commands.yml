@@ -1,0 +1,7 @@
+services:
+  facebook_events.handler.save_settings:
+    class: Backend\Modules\FacebookEvents\Command\SaveSettingsHandler
+    arguments:
+      - "@fork.settings"
+    tags:
+      - { name: command_handler, handles: Backend\Modules\FacebookEvents\Command\SaveSettings }

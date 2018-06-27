@@ -1,0 +1,5 @@
+services:
+    facebook.repository.event:
+        class: Backend\Modules\FacebookEvents\Repository\FacebookEventRepository
+        arguments:
+            - '@facebook.helper.event'

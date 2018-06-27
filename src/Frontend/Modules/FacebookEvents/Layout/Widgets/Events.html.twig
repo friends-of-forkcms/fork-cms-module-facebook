@@ -1,0 +1,26 @@
+{#
+  All available variables:
+  * hasEvents
+  * events
+#}
+
+{% if hasEvents %}
+  <div class="module-facebook-events widget-facebook-events-events">
+    {% block widget_heading %}
+      <header class="widget-heading" role="banner">
+        <h3>{{ 'msg.Events'|trans|ucfirst }}</h3>
+      </header>
+    {% endblock %}
+
+    {% block widget_body %}
+      <div class="widget-body">
+        {% for separateEvent in events %}
+          <h3>{{ separateEvent.event.name }}</h3>
+          <img src="{{ separateEvent.event.cover.source }}" alt="{{ separateEvent.event.name }}" />
+          <h4>{{ separateEvent.startTime|date('d-m-Y H:i') }} - {{ separateEvent.endTime|date('H:i') }}</h4>
+          <p>{{ separateEvent.event.description }}</p>
+        {% endfor %}
+      </div>
+    {% endblock %}
+  </div>
+{% endif %}

@@ -1,0 +1,9 @@
+imports:
+  - { resource: commands.yml }
+  - { resource: repositories.yml }
+
+services:
+    facebook.helper.event:
+        class: Backend\Modules\FacebookEvents\Helper\FacebookEventsHelper
+        arguments:
+            - '@facebook.helper'

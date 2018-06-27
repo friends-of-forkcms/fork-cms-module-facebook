@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Locale>
+  <Backend>
+    <Core>
+      <item type="label" name="FacebookEvents">
+        <translation language="en"><![CDATA[Facebook events]]></translation>
+        <translation language="nl"><![CDATA[Facebook evenementen]]></translation>
+      </item>
+      <item type="label" name="Events">
+        <translation language="en"><![CDATA[events]]></translation>
+        <translation language="nl"><![CDATA[evenementen]]></translation>
+      </item>
+    </Core>
+    <FacebookEvents>
+      <item type="label" name="MaximumNumberOfEvents">
+        <translation language="en"><![CDATA[Maximum number of events that must be shown.]]></translation>
+        <translation language="nl"><![CDATA[Maximum aantal events dat getoond mag worden.]]></translation>
+      </item>
+    </FacebookEvents>
+  </Backend>
+  <Frontend>
+    <Core>
+      <item type="label" name="Events">
+        <translation language="en"><![CDATA[events]]></translation>
+        <translation language="nl"><![CDATA[evenementen]]></translation>
+      </item>
+      <item type="message" name="NoFacebookEventsFound">
+        <translation language="en"><![CDATA[No Facebook events found.]]></translation>
+        <translation language="nl"><![CDATA[Geen facebook events gevonden.]]></translation>
+      </item>
+    </Core>
+  </Frontend>
+</Locale>
