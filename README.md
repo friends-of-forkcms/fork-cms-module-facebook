@@ -1,6 +1,6 @@
-# Facebook module for Fork CMS
+# Facebook modules for Fork CMS
 
-> The Facebook module lets you connect to Facebook and add ratings to your website.
+> The Facebook modules lets you connect to Facebook and show your Facebook Page "Events" and "Ratings" on your website.
 
 **Download latest FacebookConnector + FacebookRatings + FacebookEvents:**
 * [Modules for Fork CMS 5.*](https://github.com/friends-of-forkcms/fork-cms-module-facebook/archive/master.zip)
